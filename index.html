@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Test Everything here</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.dd.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<link rel="stylesheet" type="text/css" href="dd.css">
+	<script type="text/javascript">
+			function frnds(me){
+                console.log('click on ur frnd');
+                var name = $('#webmenu :selected').text();
+                /*FB.api(
+                  'me/satyakunu:pay',
+                  'post',
+                  {
+                    money: {
+                             title: "Happay money",
+                             url: "http://54.255.147.0/sample.html",
+                             image: "http://4.bp.blogspot.com/_oXvZtuBwMzE/S8MIjrH0J5I/AAAAAAAAAkE/mzxgqefK8So/s1600/scan0007.jpg"
+                    },
+                    amount: '9999',
+                    name_to : name,
+                    ref: "http://54.255.147.0/sample.html",
+                    explicit_shared:true
+                  },
+                  function(response) {
+                    console.log(response);
+                  }
+                );*/
+				FB.ui({method: 'apprequests',
+			        message: 'Hey '+name+'.Come and join me with this'
+			    }, function(response){console.log(response)});
+            }
+	</script>
+</head>
+<body>
+	<h1>Managing Facebook with your hands</h1>
+	
+	<form id="loginForm">
+		Mobile No: <input type="text" name="mobile" placeholder="Type your mobile no"><br>
+		Password: <input type="password" name="pin" placeholder="Type your pin here"><br>
+		<input type="submit" value="Login">
+	</form>
+	
+	<!-- <select name="webmenu" id="webmenu">
+	    <option value="calendar" data-image="http://photos-h.ak.fbcdn.net/hphotos-ak-xpf1/t1.0-0/s240x240/420513_343685982333910_1211542401_n.jpg">Calendar</option>
+	    <option value="shopping_cart" data-image="http://photos-h.ak.fbcdn.net/hphotos-ak-xpf1/t1.0-0/s240x240/420513_343685982333910_1211542401_n.jpg">Shopping Cart</option>
+	    <option value="cd" data-image="http://photos-h.ak.fbcdn.net/hphotos-ak-xpf1/t1.0-0/s240x240/420513_343685982333910_1211542401_n.jpg">CD</option>
+	    <option value="email"  selected="selected" title="http://photos-h.ak.fbcdn.net/hphotos-ak-xpf1/t1.0-0/s240x240/420513_343685982333910_1211542401_n.jpg">Email</option>
+	    <option value="faq" data-image="http://photos-h.ak.fbcdn.net/hphotos-ak-xpf1/t1.0-0/s240x240/420513_343685982333910_1211542401_n.jpg">FAQ</option>
+	    <option value="games" data-image="http://photos-h.ak.fbcdn.net/hphotos-ak-xpf1/t1.0-0/s240x240/420513_343685982333910_1211542401_n.jpg">Games</option>
+	</select> -->
+
+	<div id="result"></div>
+	<div id="actionArea">
+		<button id="frndSearch">Send money to your friends</button>
+	</div>
+</body>
+</html>
